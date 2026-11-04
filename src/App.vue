@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import CategoryNav from './components/CategoryNav.vue'
 import CartBar from './components/CartBar.vue'
 import CartPanel from './components/CartPanel.vue'
 import MenuFooter from './components/MenuFooter.vue'
 import MenuIntro from './components/MenuIntro.vue'
 import MenuSection from './components/MenuSection.vue'
+import ProductDetailDialog from './components/ProductDetailDialog.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import { fetchMenu, resolveDiningTable, submitOrder } from './data/menuRepository'
 import type { BarProfile, MenuCategory, MenuProduct } from './data/menu'
@@ -18,6 +19,8 @@ const isLoading = ref(true)
 const menuError = ref('')
 const tableError = ref('')
 const diningTable = ref<{ id: string; label: string; code: string }>()
+const selectedProduct = ref<MenuProduct>()
+const overlayHistoryOpen = ref(false)
 const cart = ref<CartLine[]>([])
 const cartOpen = ref(false)
 const activeCategory = ref('')
@@ -50,7 +53,45 @@ async function loadMenu() {
   }
 }
 
-onMounted(loadMenu)
+onMounted(() => {
+  window.addEventListener('popstate', handleBrowserBack)
+  loadMenu()
+})
+
+onBeforeUnmount(() => window.removeEventListener('popstate', handleBrowserBack))
+
+function pushOverlayHistory() {
+  if (overlayHistoryOpen.value) return
+  const currentState = history.state && typeof history.state === 'object' ? history.state : {}
+  history.pushState({ ...currentState, pragaMenuOverlay: true }, '', window.location.href)
+  overlayHistoryOpen.value = true
+}
+
+function handleBrowserBack() {
+  overlayHistoryOpen.value = false
+  cartOpen.value = false
+  selectedProduct.value = undefined
+}
+
+function openCart() {
+  pushOverlayHistory()
+  cartOpen.value = true
+}
+
+function openProduct(product: MenuProduct) {
+  pushOverlayHistory()
+  selectedProduct.value = product
+}
+
+function closeOverlay() {
+  cartOpen.value = false
+  selectedProduct.value = undefined
+  if (overlayHistoryOpen.value && history.state?.pragaMenuOverlay) {
+    history.back()
+  } else {
+    overlayHistoryOpen.value = false
+  }
+}
 
 function addToCart(product: MenuProduct, format: MenuProduct['formats'][number]) {
   const line = cart.value.find((item) => item.productId === product.id && item.formatName === format.name)
@@ -98,7 +139,7 @@ async function confirmOrder() {
 
 <template>
   <div class="menu-app" :class="{ 'has-cart': itemCount > 0 }">
-    <SiteHeader :bar="bar" :item-count="itemCount" @open-cart="cartOpen = true" />
+    <SiteHeader :bar="bar" :item-count="itemCount" @open-cart="openCart" />
     <main id="top">
       <MenuIntro :bar="bar" />
       <p
@@ -130,11 +171,21 @@ async function confirmOrder() {
           :format-price="formatPrice"
           @add="addToCart"
           @change-quantity="changeProductQuantity"
+          @details="openProduct"
         />
       </div>
       <MenuFooter :bar="bar" />
     </main>
-    <CartBar v-if="itemCount > 0" :item-count="itemCount" :total="cartTotal" :format-price="formatPrice" @open="cartOpen = true" />
+    <CartBar v-if="itemCount > 0" :item-count="itemCount" :total="cartTotal" :format-price="formatPrice" @open="openCart" />
+    <ProductDetailDialog
+      v-if="selectedProduct"
+      :product="selectedProduct"
+      :format-price="formatPrice"
+      :quantity-for="quantityFor"
+      @close="closeOverlay"
+      @add="(format) => addToCart(selectedProduct!, format)"
+      @change-quantity="(formatName, change) => changeProductQuantity(selectedProduct!.id, formatName, change)"
+    />
     <CartPanel
       v-if="cartOpen"
       :cart="cart"
@@ -143,7 +194,7 @@ async function confirmOrder() {
       :table-label="diningTable?.label"
       :can-confirm="Boolean(diningTable)"
       :confirm-order="confirmOrder"
-      @close="cartOpen = false"
+      @close="closeOverlay"
       @change-quantity="changeQuantity"
       @clear="cart = []"
     />

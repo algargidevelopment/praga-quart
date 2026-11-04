@@ -20,6 +20,8 @@ Ejecuta una sola vez `supabase/migrations/202611040001_multi_bar.sql` en el SQL 
 
 Después ejecuta `supabase/migrations/202611040002_table_orders.sql`. Crea mesas, pedidos y líneas de pedido, y una función que valida la mesa, vuelve a leer los precios y guarda el pedido completo en una transacción.
 
+Para mostrar descripciones ampliadas en la ficha de cada producto, ejecuta `supabase/migrations/202611040003_detailed_product_description.sql`. Mantiene `description` como texto breve para la lista y añade `detailed_description` para la ficha.
+
 Para añadir un bar, crea un registro en `bars` con un `id` único y un `slug` único. Después inserta las categorías, subcategorías, productos y formatos con ese mismo `bar_id`. Los textos de marca y presentación se configuran en `bars`.
 
 La aplicación consulta la carta por `bar_id` obtenido del slug y muestra solo los datos de ese bar. Las políticas de la migración permiten lecturas públicas de las cartas y no conceden permisos de escritura pública.

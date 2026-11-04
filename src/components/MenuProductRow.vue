@@ -11,6 +11,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   add: [format: MenuProduct['formats'][number]]
   changeQuantity: [formatName: string, change: number]
+  details: [product: MenuProduct]
 }>()
 const imageFailed = ref(false)
 const imageUrl = props.product.image
@@ -22,7 +23,7 @@ const imageUrl = props.product.image
 
 <template>
   <article class="product-row" :class="{ 'has-image': product.image && !imageFailed }">
-    <div class="product-info">
+    <button class="product-info product-detail-trigger" type="button" :aria-label="`Ver detalles de ${product.name}`" @click="emit('details', product)">
       <img
         v-if="product.image && !imageFailed"
         class="product-photo"
@@ -37,7 +38,7 @@ const imageUrl = props.product.image
           {{ product.description }}
         </p>
       </div>
-    </div>
+    </button>
     <div class="product-formats">
       <div v-for="format in product.formats" :key="format.name" class="format-action">
         <button

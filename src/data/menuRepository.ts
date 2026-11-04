@@ -34,6 +34,7 @@ interface ProductRow {
   subcategory_id: string
   name: string
   description: string | null
+  detailed_description: string | null
   image_path: string | null
   sort_order: number
   active: boolean
@@ -62,7 +63,7 @@ export async function fetchMenu(barSlug: string) {
   const [categoryResult, subcategoryResult, productResult, formatResult] = await Promise.all([
     supabase.from('categories').select('bar_id, id, name, icon, note, sort_order').eq('bar_id', bar.id).order('sort_order'),
     supabase.from('subcategories').select('bar_id, id, category_id, name, sort_order').eq('bar_id', bar.id).order('sort_order'),
-    supabase.from('products').select('bar_id, id, subcategory_id, name, description, image_path, sort_order, active').eq('bar_id', bar.id).eq('active', true).order('sort_order'),
+    supabase.from('products').select('bar_id, id, subcategory_id, name, description, detailed_description, image_path, sort_order, active').eq('bar_id', bar.id).eq('active', true).order('sort_order'),
     supabase.from('product_formats').select('id, bar_id, product_id, name, price, sort_order').eq('bar_id', bar.id).order('sort_order'),
   ])
 
@@ -97,6 +98,7 @@ export async function fetchMenu(barSlug: string) {
       id: product.id,
       name: product.name,
       description: product.description || undefined,
+      detailedDescription: product.detailed_description || undefined,
       image,
       categoryId: categoryForSubcategory.get(product.subcategory_id) ?? '',
       subcategoryId: product.subcategory_id,

@@ -12,6 +12,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   add: [product: MenuProduct, format: MenuProduct['formats'][number]]
   changeQuantity: [productId: string, formatName: string, change: number]
+  details: [product: MenuProduct]
 }>()
 const collapsed = ref(false)
 
@@ -48,6 +49,7 @@ function productsFor(subcategoryId: string) {
           :format-price="formatPrice"
           @add="(format) => emit('add', product, format)"
           @change-quantity="(formatName, change) => emit('changeQuantity', product.id, formatName, change)"
+          @details="(selectedProduct) => emit('details', selectedProduct)"
         />
         <p v-if="productsFor(subcategory.id).length === 0" class="empty-category">
           Pronto añadiremos productos a esta sección.
