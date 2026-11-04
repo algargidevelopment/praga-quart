@@ -1,0 +1,22 @@
+id,category_id,name,sort_order
+compartir,comida,¿Quieres compartir?,1
+pizzella,comida,Pizzella,2
+sandwiches,comida,Sandwiches,3
+hot-dog,comida,Hot dog,4
+suaves-refrescantes,cervezas,Suaves y refrescantes,1
+tostadas-cuerpo,cervezas,Tostadas y con cuerpo,2
+refrescante-afrutada,cervezas,Refrescante y afrutada,3
+cuerpo-aromaticas,cervezas,Con cuerpo y aromáticas,4
+lupuladas-caracter,cervezas,Lupuladas y con carácter,5
+oscura-intensa,cervezas,Oscura y sabor intenso,6
+floral-frutal,cervezas,Floral y frutal,7
+nuevos-sabores,cervezas,Nuevos sabores,8
+sidras,cervezas,Sidras,9
+ginebras,bebidas,Ginebras,1
+rones,bebidas,Rones,2
+vodkas,bebidas,Vodkas,3
+whiskys,bebidas,Whiskys,4
+otros-licores,bebidas,Otros licores,5
+cocteles,bebidas,Cócteles,6
+vinos-vermut,bebidas,Vinos & vermut,7
+refrescos,bebidas,Refrescos,8

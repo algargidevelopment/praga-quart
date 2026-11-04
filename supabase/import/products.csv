@@ -1,0 +1,83 @@
+id,subcategory_id,name,description,image_path,sort_order,active
+nachos-6-quesos,compartir,Nachos 6 Quesos,,,1,true
+nachos-bbq,compartir,Nachos BBQ,Opción hot disponible,,2,true
+nachos-guacamole-picogallo,compartir,Nachos Guacamole Picogallo,Opción vegetariana,,3,true
+tabla-embutidos-rosello,compartir,Tabla Embutidos Rosello Artesanal Rincón Ademuz,Rincón de Ademuz,,4,true
+fingers-pollo,compartir,Fingers Pollo,,,5,true
+fingers-pollo-texas,compartir,Fingers Pollo Texas,,,6,true
+ajoarriero,compartir,Ajoarriero,,,7,true
+pizzella-4-quesos,pizzella,Pizzella 4 Quesos,,,8,true
+pizzella-jamon-queso,pizzella,Pizzella Jamón York y Queso,,,9,true
+pizzella-peperoni,pizzella,Pizzella Peperoni,,,10,true
+pizzella-margarita,pizzella,Pizzella Margarita,,,11,true
+mixto-york-queso,sandwiches,Sándwich Mixto York y Queso,,,12,true
+hot-dog-praga,hot-dog,Hot Dog Praga,,,13,true
+el-aguila-dorada,suaves-refrescantes,El Águila Dorada,Suaves y Refrescantes,products/beer-el-aguila-dorada.png,14,true
+el-aguila-sin-filtrar,suaves-refrescantes,El Águila Sin Filtrar,Suaves y Refrescantes,products/beer-el-aguila-sin-filtrar.png,15,true
+amstel-radler,suaves-refrescantes,Amstel® Radler,Suaves y Refrescantes,products/beer-amstel-radler.png,16,true
+cruzcampo-gran-reserva,tostadas-cuerpo,Cruzcampo® Gran Reserva,Tostadas y con cuerpo,products/beer-cruzcampo-gran-reserva.png,17,true
+cruzcampo-especial-sin-gluten,suaves-refrescantes,Cruzcampo® Especial Sin Gluten,Suaves y Refrescantes,products/beer-cruzcampo-sin-gluten.png,18,true
+el-alcazar,suaves-refrescantes,El Alcázar,Suaves y Refrescantes,products/beer-el-alcazar.png,19,true
+18-70,suaves-refrescantes,18/70,Suaves y Refrescantes,products/beer-18-70.png,20,true
+hop-house-13,suaves-refrescantes,Hop House 13,Suaves y Refrescantes,products/beer-hop-house-13.png,21,true
+amstel-oro-tostada,tostadas-cuerpo,Amstel® Oro Tostada,Tostadas y con cuerpo,products/beer-amstel-oro-tostada.png,22,true
+amstel-oro-00-tostada,tostadas-cuerpo,"Amstel® Oro 0,0 Tostada",Tostadas y con cuerpo,products/beer-amstel-oro-00-tostada.png,23,true
+heineken,suaves-refrescantes,Heineken®,Suaves y Refrescantes,products/beer-heineken.png,24,true
+heineken-00,suaves-refrescantes,"Heineken® 0,0",Suaves y Refrescantes,products/beer-heineken-00.png,25,true
+paulaner-original-munchner,suaves-refrescantes,Paulaner Original Münchner,Suaves y Refrescantes,products/beer-paulaner-original-munchner.png,26,true
+paulaner-weissbier,refrescante-afrutada,Paulaner Weissbier,Refrescante y afrutada,products/beer-paulaner-weissbier.png,27,true
+murphys-irish-red,suaves-refrescantes,Murphy's Irish Red,Suaves y Refrescantes,products/beer-murphys-irish-red.png,28,true
+fosters,suaves-refrescantes,Foster's,Suaves y Refrescantes,products/beer-fosters.png,29,true
+maes,suaves-refrescantes,Maes,Suaves y Refrescantes,products/beer-maes.png,30,true
+birra-moretti,suaves-refrescantes,Birra Moretti,Suaves y Refrescantes,products/beer-birra-moretti.png,31,true
+sol,suaves-refrescantes,Sol®,Suaves y Refrescantes,products/beer-sol.png,32,true
+paulaner-salvator,tostadas-cuerpo,Paulaner Salvator,Tostadas y con cuerpo,products/beer-paulaner-salvator.png,33,true
+affligem-double,cuerpo-aromaticas,Affligem Double,Con cuerpo y aromáticas,products/beer-affligem-double.png,34,true
+judas,cuerpo-aromaticas,Judas,Con cuerpo y aromáticas,products/beer-judas.png,35,true
+lagunitas-ipa,lupuladas-caracter,Lagunitas IPA,Lupuladas y con carácter,products/beer-lagunitas-ipa.png,36,true
+guinness-draught,oscura-intensa,Guinness® Draught,Oscura y sabor intenso,products/beer-guinness-draught.png,37,true
+mort-subite-kriek,floral-frutal,Mort Subite Kriek,Floral y frutal,products/beer-mort-subite-kriek.png,38,true
+desperados,nuevos-sabores,Desperados,Nuevos sabores,products/beer-desperados.png,39,true
+desperados-lima,nuevos-sabores,Desperados Lima,Nuevos sabores,products/beer-desperados-lima.png,40,true
+ladron-de-manzanas,sidras,Ladrón de Manzanas,Combinación de manzanas,products/beer-ladron-de-manzanas.png,41,true
+hendricks,ginebras,Hendrick's,Ginebra,,42,true
+martin-millers,ginebras,Martin Millers,Ginebra,,43,true
+bombay-sapphire,ginebras,Bombay Sapphire,Ginebra,,44,true
+nordes,ginebras,Nordés,Ginebra,,45,true
+tanqueray,ginebras,Tanqueray,Ginebra,,46,true
+puerto-de-indias,ginebras,Puerto de Indias,Ginebra,,47,true
+seagrams,ginebras,Seagram's,Ginebra,,48,true
+beefeater,ginebras,Beefeater,Ginebra,,49,true
+larios,ginebras,Larios,Ginebra,,50,true
+69-brosses,ginebras,69 Brosses,Ginebra,,51,true
+puerto-de-indias-classic,ginebras,Puerto de Indias Classic,Ginebra,,52,true
+puerto-de-indias-mora,ginebras,Puerto de Indias Mora,Ginebra,,53,true
+barcelo-imperial,rones,Barceló Imperial,Ron,,54,true
+havana-club-7,rones,Havana Club 7 años,Ron,,55,true
+santa-teresa,rones,Santa Teresa,Ron,,56,true
+barcelo,rones,Barceló,Ron,,57,true
+brugal,rones,Brugal,Ron,,58,true
+cacique,rones,Cacique,Ron,,59,true
+absolut,vodkas,Absolut,Vodka,,60,true
+moskovskaya,vodkas,Moskovskaya,Vodka,,61,true
+moskovskaya-pink,vodkas,Moskovskaya Pink,Vodka,,62,true
+jw-black-label,whiskys,J.W. Black Label,Whisky,,63,true
+glenfiddich,whiskys,Glenfiddich,Whisky,,64,true
+jack-daniels,whiskys,Jack Daniel's,Whisky,,65,true
+jameson,whiskys,Jameson,Whisky,,66,true
+jw-red-label,whiskys,J.W. Red Label,Whisky,,67,true
+ballantines,whiskys,Ballantines,Whisky,,68,true
+jb,whiskys,J&B,Whisky,,69,true
+cutty-sark,whiskys,Cutty Sark,Whisky,,70,true
+jaggermeister,otros-licores,Jägermeister,Licor,,71,true
+mojito-tradicional,cocteles,Mojito Tradicional,Opción sin alcohol -0.50€,,72,true
+mojitos-sabores,cocteles,Mojitos Sabores,"Coco, Fresa, Fruta de la Pasión, Mango, Melón y Piña. Opción sin alcohol -0.50€",,73,true
+mojito-jaggermeister,cocteles,Mojito Jägermeister,Opción sin alcohol -0.50€,,74,true
+pina-colada,cocteles,Piña Colada,Opción sin alcohol -0.50€,,75,true
+san-francisco,cocteles,San Francisco,Opción sin alcohol -0.50€,,76,true
+copa-vino-blanco,vinos-vermut,Copa Vino Blanco,,,77,true
+copa-vino-tinto,vinos-vermut,Copa Vino Tinto,,,78,true
+vermout-blanco,vinos-vermut,Vermout Blanco,,,79,true
+vermout-rojo,vinos-vermut,Vermout Rojo,,,80,true
+tinto-de-verano,vinos-vermut,Tinto de Verano,,,81,true
+refrescos,refrescos,Refrescos,,,82,true
